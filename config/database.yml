@@ -1,0 +1,17 @@
+development:
+  adapter: mongodb
+  host: localhost
+  database: demo_app
+
+test: &TEST
+  adapter: mongodb
+  host: localhost
+  database: demo_app_test
+
+production:
+  adapter: mongodb
+  host: localhost
+  database: demo_app
+
+cucumber:
+  <<: *TEST
