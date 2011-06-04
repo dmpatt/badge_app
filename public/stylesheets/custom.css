@@ -26,42 +26,6 @@ section h1 {
 	font-size: 200%;
 }
 
-/* Navigation */
-
-nav {
-	float: right;
-}
-
-nav {
-	background-color: white;
-	padding: 0 0.7em;
-	white-space: nowrap;
-}
-
-nav u1 {
-	margin: 0;
-	padding: 0;
-}
-
-nav u1 li {
-	list-style-type: none;
-	display: inline-block;
-	padding: 0.2em 0;
-}
-
-nav u1 li a {
-	padding: 0 5px;
-	font-weight: bold;
-}
-
-nav u1 li a:visited {
-	color: #450606;
-}
-
-nav u1 li a:hover {
-	text-decoration: underline;
-}
-
 /* Links */
 
 a {
@@ -76,6 +40,47 @@ a:hover {
 
 a:visited {
 	color: #450606;
+}
+
+/* Navigation */
+
+
+div ul li {
+	float: none;
+	list-style-type: none;
+	display: inline-block;
+	padding: 0.2em 50;
+}
+
+nav {
+	float: right;
+	background-color: white;
+	padding: 0 0.7em;
+	white-space: nowrap;
+}
+
+nav ul {
+	margin: 0;
+	padding: 0;
+}
+
+nav ul li {
+	list-style-type: none;
+	display: inline-block;
+	padding: 0.2em 0;
+}
+
+nav ul li a {
+	padding: 0 5px;
+	font-weight: bold;
+}
+
+nav ul li a:visited {
+	color: #450606;
+}
+
+nav ul li a:hover {
+	text-decoration: underline;
 }
 
 /* sign up button */

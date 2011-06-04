@@ -1,14 +1,18 @@
 BadgeApp::Application.routes.draw do
 	
-	get "user/new"
+	resources :users
+	resources :admins
 	
 	match '/register', :to => 'users#new'
+	match '/regadmin', :to => 'admins#new'
 
 	get "pages/home"
 	get "pages/contact"
 	get "pages/about"
 	get "pages/help"
+	get "pages/admin"
 
+	match '/admin', :to => 'pages#admin'
 	match '/contact', :to => 'pages#contact'
 	match '/about', :to => 'pages#about'
 	match '/help', :to => 'pages#help'
