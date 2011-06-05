@@ -8,6 +8,7 @@ gem "rake", "0.8.7"
 
 #gem 'sqlite3-ruby', :require => 'sqlite3'
 gem "mongo_mapper"
+gem 'gravatar_image_tag', '0.1.0'
 
 group :development do
 	gem 'rspec-rails', '2.0.1'
