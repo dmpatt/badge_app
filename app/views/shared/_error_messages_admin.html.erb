@@ -1,0 +1,12 @@
+<%= @admin.errors.any? %>
+	<div id="error_admin">
+		<h2><%= pluralize(@admin.errors.count, "error") %>
+			prohibited this admin from being saved:</h2>
+		<p>There were problems with the following fields:</p>
+		<ul>
+		<%= @admin.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+		</ul>
+	</div>
+<% end %>
