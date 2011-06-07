@@ -1,5 +1,7 @@
+
 <li> 
-	<%= link_to badge.title, badge %>
+	<%= link_to badge.title, badge_path(badge) %>
+	| <%= link_to "tag", tag_path(badge) %>
 	<% if admin_signed_in? %>
 	| <%= link_to "edit", edit_badge_path(badge) %>
 	| <%= link_to "delete", badge, :method => :delete, :confirm => "Are you sure?", 

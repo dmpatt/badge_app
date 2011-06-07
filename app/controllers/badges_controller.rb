@@ -1,5 +1,5 @@
 class BadgesController < ApplicationController
-	before_filter :authenticate, :only => :index
+	before_filter :authenticate, :only => [:index, :tag, :tag_add]
 	before_filter :admin_user, :only => [:destroy, :new, :edit, :update]
 	
 	def show
@@ -38,6 +38,24 @@ class BadgesController < ApplicationController
 			render 'edit'
 		end
 	end
+	
+	def tag
+		@badge = Badge.find(params[:id])
+		@title = "Tag Badge"
+	end
+	
+	def tag_add
+		@badge = Badge.find(params[:id])
+		tag = params[:badge][:tag]
+		if tag
+			@badge.add_tag(tag)
+			flash[:success] = "Badge Tagged"
+			redirect_to @badge
+		else
+			@title = "Tag Badge"
+			render 'tag'
+		end
+	end	
 	
 	def index
 		@title = "Badge Index"

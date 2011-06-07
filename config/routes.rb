@@ -12,6 +12,7 @@ BadgeApp::Application.routes.draw do
 	match '/createbadge', :to => 'badges#new'
 	match '/signin',    :to => 'sessions#new'
 	match '/signout',  :to => 'sessions#destroy'
+	match '/badges/:id/tag', :to => 'badges#tag', :as => 'tag'
 
 	get "pages/home"
 	get "pages/contact"
