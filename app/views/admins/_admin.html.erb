@@ -1,0 +1,8 @@
+<li> 
+	<%= gravatar_for admin, :size => 40 %>
+	<%= link_to admin.name, User.find_by_email(admin.email) %>
+	<% if admin_signed_in? %>
+	| <%= link_to "delete", Admin.find_by_email(admin.email), :method => :delete, 
+				:confirm => "Are you sure?", :title => "Delete #{admin.name}" %>
+	<% end %>	
+</li>

@@ -6,23 +6,20 @@ class SessionsController < ApplicationController
 	
 	def create
 		user = User.authenticate(params[:session][:email],
-						   params[:session][:email])
+						   params[:session][:password])
 		admin = Admin.authenticate(params[:session][:email],
-							params[:session][:email])
-		if user.nil? && admin.nil?
+							params[:session][:password])
+		if user.nil?
 			flash.now[:error] = "Invlaid email/password combination."
 			@title = "Sign in"
 			render 'new'
-		elsif user.nil?
-			sign_in_admin admin
-			redirect_to admin
 		elsif admin.nil?
 			sign_in_user user
-			redirect_to user
+			redirect_back_or user
 		else
 			sign_in_admin admin
 			sign_in_user user
-			redirect_to user
+			redirect_back_or user
 		end
 	end
 	

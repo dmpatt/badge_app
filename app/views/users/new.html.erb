@@ -1,7 +1,7 @@
 <h1>Register</h1>
 
 <% form_for(@user) do |f| %>
-	<%= render 'shared/error_messages_user' %>
+	<%= render 'shared/error_messages_user', :object => f.object %>
 	<div class="field">
 		<%= f.label :name %></br>
 		<%= f.text_field :name %>

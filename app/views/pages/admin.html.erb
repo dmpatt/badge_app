@@ -6,6 +6,9 @@
 	<ul>
 		<% if !admin_signed_in? %>
 		<li> <%= link_to "Reg Admin", regadmin_path, :class => "signup_button round" %></li>
+		<% else %>
+		<li> <%= link_to "Users", users_path, :class => "signup_button round" %></li>	
+		<li> <%= link_to "Admins", admins_path, :class => "signup_button round" %></li>
 		<% end %>
 	</ul>
 </div>
