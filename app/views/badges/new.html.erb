@@ -1,0 +1,16 @@
+<h1>Create Badge</h1>
+
+<% form_for(@badge) do |f| %>
+	<%= render 'shared/error_messages_badge', :object => f.object %>
+	<div class="field">
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+	</div>
+	<div class="field">
+		<%= f.label :description %>
+		<%= f.text_area :description %>
+	</div>		
+	<div class="actions">
+		<%= f.submit "Update" %>
+	</div>
+<% end %>

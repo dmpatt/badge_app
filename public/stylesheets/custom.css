@@ -90,7 +90,7 @@ a.signup_button {
 	margin-right: auto;
 	display: block;
 	text-align: center;
-	width: 150px;
+	width: 110px;
 	color: #fff;
 	background: #BB4444;
 	font-size: 150%;
@@ -163,7 +163,7 @@ div.field, div.actions {
 	color: #fff;
 }
 
-#error_admin, #error_user {
+#error_admin, #error_user, #error_badge {
 	width: 400px;
 	border: 2px solid red;
 	padding: 7px;
@@ -172,7 +172,7 @@ div.field, div.actions {
 	background-color: #f0f0f0;
 }
 
-#error_admin h2, #error_user h2 {
+#error_admin h2, #error_user h2, #error_badge h2 {
 	text-align: left;
 	font-weight: bold;
 	padding: 5px 5px 5px 15px;
@@ -182,13 +182,13 @@ div.field, div.actions {
 	color: #fff;
 }
 
-#error_admin p, #error_user p {
+#error_admin p, #error_user p, #error_badge p {
 	color: #333;
 	margin-bottom: 0;
 	padding: 5px;
 }
 
-#error_admin ul li, #error_user ul li {
+#error_admin ul li, #error_user ul li, #error_badge ul li {
 	font-size: 12px;
 	list-style: square;
 }

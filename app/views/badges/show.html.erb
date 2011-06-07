@@ -1,0 +1,16 @@
+<table class="profile" summary="Profile information">
+	<tr>
+		<td class="main">
+			<h1> 
+				<%= @badge.title %> 
+			</h1>
+			<p>
+			<strong>Description</strong>  <%= @badge.description %><br />
+			</p>
+		</td>
+		<td class="sidebar round">
+			<strong>Title</strong>  <%= @badge.title %><br />
+			<strong>URL</strong>     <%= link_to badge_path(@badge), @badge %>
+		</td>
+	</tr>
+</table>

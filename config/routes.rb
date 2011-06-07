@@ -4,10 +4,12 @@ BadgeApp::Application.routes.draw do
 
 	resources :users
 	resources :admins
+	resources :badges
 	resources :sessions, :only => [:new, :create, :destroy]
 	
 	match '/register', :to => 'users#new'
 	match '/regadmin', :to => 'admins#new'
+	match '/createbadge', :to => 'badges#new'
 	match '/signin',    :to => 'sessions#new'
 	match '/signout',  :to => 'sessions#destroy'
 
