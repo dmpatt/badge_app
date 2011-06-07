@@ -1,17 +1,15 @@
 development:
   adapter: mongodb
   host: localhost
-  database: demo_app
+  database: badge_app
 
 test: &TEST
   adapter: mongodb
   host: localhost
-  database: demo_app_test
+  database: badge_app_test
 
 production:
   adapter: mongodb
   host: localhost
-  database: demo_app
+  database: badge_app
 
-cucumber:
-  <<: *TEST

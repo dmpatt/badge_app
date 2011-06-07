@@ -4,7 +4,8 @@
 </p>
 <div>
 <ul>
+<% if !user_signed_in? %>
 <li> <%= link_to "Register", register_path, :class => "signup_button round" %> </li>
-<li> <%= link_to "Reg Admin", regadmin_path, :class => "signup_button round" %> </li>
+<% end %>
 </ul>
 </div>

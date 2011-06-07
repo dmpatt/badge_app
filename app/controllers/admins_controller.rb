@@ -1,8 +1,8 @@
 class AdminsController < ApplicationController
 	
   def show
-	  @admin = Admin.find(params[:_id])
-	  @title = @user.name
+	  @admin = Admin.find(params[:id])
+	  @title = @admin.name
   end		
 	
   def new
@@ -11,13 +11,21 @@ class AdminsController < ApplicationController
   end
   
   def create
-	@admin = Admin.new(params[:admin])
-	if @admin.save
-		  redirect_to @user
-	else
-		@title = "RegAdmin"
-		render 'new'
+	if user_signed_in?
+		user = current_user
+		if !user.nil? && User.authenticate(user.email, params[:password])
+			#params[:name] = user.name
+			#params[:email] = user.email
+			@admin = Admin.new(params[:admin])
+			if @admin.save
+				sign_in_admin @admin
+				flash[:success] = "Badge App Administrator!"
+				return redirect_to @admin
+			end		
+		end
 	end
+	@title = "Reg Admin"
+	render 'new'	
   end  
 
 end

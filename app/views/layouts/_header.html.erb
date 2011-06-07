@@ -1,11 +1,17 @@
 <header>
-	<%= link_to image_tag("logo.png", :alt => "Badge App", :class => "round"), root_path %>
+	<%= link_to logo, root_path %>
 	<nav class="round">
 		<ul>
 			<li><%= link_to "Home", root_path %></li>
 			<li><%= link_to "Help", help_path %></li>
+			<% if user_signed_in? %>
 			<li><%= link_to "Admin", admin_path %></li>
-			<li><%= link_to "Sign in", '#' %></li>
+			<% end %>
+			<% if user_signed_in? || admin_signed_in? %>
+			<li><%= link_to "Sign_out", signout_path, :method => :delete %></li>
+			<% else %>
+			<li><%= link_to "Sign in", signin_path %></li>
+			<% end %>
 		</ul>
 	</nav>
 </header>

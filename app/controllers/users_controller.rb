@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 	
   def show
-	  @user = User.find(params[:_id])
+	  @user = User.find(params[:id])
 	  @title = @user.name
   end	
 	
@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   def create
 	@user = User.new(params[:user])
 	if @user.save
+		sign_in_user @user #####change?
 		flash[:success] = "Welcome to the Badge App!"
 		redirect_to @user
 	else
